@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Do You Need a Visa?</title>
+    <link rel="stylesheet" href="./visa.style.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <h1>Do You Need a Visa?</h1>
+        <p>Fill out the form below to determine your visa requirements.</p>
+    </header>
+
+    <!-- Red Warning -->
+    <p style="color: red; font-weight: bold;">
+        As of April 2025, U.S. citizens are required to obtain a visa prior to entering France. Travelers who arrive
+        without a valid visa may be denied entry.
+    </p>
+
+    <!-- Visa Form Section -->
+
+    <!-- Information Section -->
+    <section class="information-section">
+        <h2>Important Information</h2>
+        <p>Please ensure that you have all the necessary documents ready before filling out this form.</p>
+        <ul>
+            <li>Passport with at least 6 months validity.</li>
+            <li>Recent passport-sized photograph.</li>
+            <li>Proof of accommodation in France.</li>
+            <li>Travel itinerary.</li>
+            <li>Financial proof for the duration of your stay.</li>
+        </ul>
+    </section>
+
+    <img src="./image/ppp.jpg" class="passport">
+    <h2>Passport</h2>
+    <main class="visa-form-container">
+        <!-- Box 1: Personal Information -->
+        <div class="form-box">
+            <h2>Personal Information</h2>
+            <div class="form-group">
+                <label for="surname">Surname:</label>
+                <input type="text" id="surname" name="surname" placeholder="Enter your surname" required>
+            </div>
+            <div class="form-group">
+                <label for="other-names">Other Names:</label>
+                <input type="text" id="other-names" name="other-names" placeholder="Enter your other names" required>
+            </div>
+            <div class="form-group">
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" placeholder="Enter your age" required>
+            </div>
+        </div>
+
+        <!-- Box 2: Travel Information -->
+        <div class="form-box">
+            <h2>Travel Information</h2>
+            <div class="form-group">
+                <label for="nationality">Nationality:</label>
+                <select id="nationality" name="nationality" required>
+                    <option value="">Select your nationality</option>
+                    <option value="eu">European Union (EU)</option>
+                    <option value="us">United States</option>
+                    <option value="ca">Canada</option>
+                    <option value="in">India</option>
+                    <option value="cn">China</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="country">Country of Residence:</label>
+                <input type="text" id="country" name="country" placeholder="Enter your country of residence" required>
+            </div>
+            <div class="form-group">
+                <label for="id-type">ID Type:</label>
+                <select id="id-type" name="id-type" required>
+                    <option value="passport">Passport</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Box 3: Additional Information -->
+        <div class="form-box">
+            <h2>Additional Information</h2>
+            <div class="form-group">
+                <label>Are you married to a French national?</label>
+                <div>
+                    <input type="radio" id="married-yes" name="married" value="yes" required>
+                    <label for="married-yes">Yes</label>
+                </div>
+                <div>
+                    <input type="radio" id="married-no" name="married" value="no" required>
+                    <label for="married-no">No</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Do you join or travel with a close family member from an EU country (excluding France), the EEA,
+                    the Swiss Confederation, or a family member who is a UK national beneficiary of the withdrawal
+                    agreement?</label>
+                <div>
+                    <input type="radio" id="family-yes" name="family" value="yes" required>
+                    <label for="family-yes">Yes</label>
+                </div>
+                <div>
+                    <input type="radio" id="family-no" name="family" value="no" required>
+                    <label for="family-no">No</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="passport-image">Upload Passport Image:</label>
+                <input type="file" id="passport-image" name="passport-image" accept="image/*" required>
+            </div>
+        </div>
+
+        <!-- Submit Button -->
+        <!-- <button type="submit" class="submit-button">Submit</button> -->
+    </main>
+
+
+    <button class="submit-button" onclick="handleSubmit()">Submit</button>
+
+    </form>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="footer__container">
+            <!-- Footer Logo and Description -->
+            <div class="footer__logo">
+                <img src="./image/imilogo.jpg.png" alt="Logo" class="footer__logo-img">
+                <p class="footer__description">
+                    France Immigration Service - The official website for visas for France. Helping you with all your
+                    visa needs.
+                </p>
+            </div>
+
+            <!-- Footer Links -->
+            <div class="footer__links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#home">General Information</a></li>
+                    <li><a href="#services">Tourism / Private Stay</a></li>
+                    <li><a href="#about">Professional Purpose</a></li>
+                    <li><a href="#contact">Studies / Training</a></li>
+                    <li><a href="#faq">Frequently Asked Questions</a></li>
+                </ul>
+            </div>
+
+            <!-- Footer Contact -->
+            <div class="footer__contact">
+                <h3>Contact Us</h3>
+                <p>Email: support@france-visas.gov</p>
+                <p>Phone: +33 1 23 45 67 89</p>
+                <p>Address: 10 Rue de France, Paris, France</p>
+            </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer__bottom">
+            <p>&copy; 2025 France Immigration Service. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function handleSubmit() {
+            const requiredFields = [
+                'surname',
+                'other-names',
+                'age',
+                'nationality',
+                'country',
+                'id-type',
+                'passport-image'
+            ];
+
+            let valid = true;
+
+            requiredFields.forEach(id => {
+                const element = document.getElementById(id);
+                if (!element || !element.value) {
+                    valid = false;
+                }
+            });
+
+            const marriedYes = document.getElementById('married-yes');
+            const marriedNo = document.getElementById('married-no');
+            const familyYes = document.getElementById('family-yes');
+            const familyNo = document.getElementById('family-no');
+
+            if ((!marriedYes.checked && !marriedNo.checked) ||
+                (!familyYes.checked && !familyNo.checked)) {
+                valid = false;
+            }
+
+            if (valid) {
+                window.location.href = "./submit.html";
+            } else {
+                alert("Please fill out all required fields before submitting.");
+            }
+        }
+    </script>
+
+
+</body>
+
+</html>

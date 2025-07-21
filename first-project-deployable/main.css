@@ -1,0 +1,1245 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Header Styles */
+.header {
+    background-color: #003366;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.header__logo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.header__logo-img {
+    width: 50px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.header__logo-text {
+    margin: 0;
+    font-size: 14px;
+}
+
+.language-menu {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.flag-icon {
+    width: 30px;
+    height: auto;
+    border-radius: 50%;
+}
+
+.header__search {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.header__search-input {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.header__search-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.header__search-button:hover {
+    background-color: #0056b3;
+}
+
+.header__nav ul {
+    display: flex;
+    gap: 15px;
+}
+
+.header__nav li a {
+    color: white;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.header__nav li a:hover {
+    background-color: #0056b3;
+}
+
+/* Scrollable Navigation Bar */
+.header__nav {
+    display: flex;
+    /* Flexbox layout for horizontal alignment */
+    gap: 20px;
+    /* Space between navigation items */
+    list-style: none;
+    /* Remove bullet points */
+    padding: 0;
+    margin: 0;
+    overflow-x: auto;
+    /* Enable horizontal scrolling */
+    white-space: nowrap;
+    /* Prevent items from wrapping to the next line */
+}
+
+.header__nav li {
+    display: inline-block;
+    /* Ensure items stay inline */
+}
+
+.header__nav a {
+    text-decoration: none;
+    /* Remove underline */
+    color: white;
+    /* White text color */
+    font-size: 16px;
+    /* Font size for links */
+    padding: 10px 15px;
+    /* Add padding for clickable area */
+    transition: color 0.3s ease;
+    /* Smooth hover effect */
+}
+
+.header__nav a:hover {
+    color: #ffcc00;
+    /* Highlight color on hover */
+}
+
+/* Add a scrollbar for the navigation bar */
+.header__nav::-webkit-scrollbar {
+    height: 6px;
+    /* Height of the scrollbar */
+}
+
+.header__nav::-webkit-scrollbar-thumb {
+    background-color: #007bff;
+    /* Scrollbar thumb color */
+    border-radius: 3px;
+    /* Rounded scrollbar thumb */
+}
+
+.header__nav::-webkit-scrollbar-track {
+    background-color: #f4f4f4;
+    /* Scrollbar track color */
+}
+
+
+/* Add to your styles.css file */
+
+/* Language Menu Styles */
+.language-menu {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    background: #f7faff;
+    border-radius: 8px;
+    padding: 0.4rem 1rem;
+    box-shadow: 0 2px 8px rgba(44, 83, 100, 0.07);
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.flag-icon {
+    width: 28px;
+    height: 18px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    box-shadow: 0 1px 3px rgba(44, 83, 100, 0.08);
+}
+
+#language-select {
+    padding: 0.3rem 1rem;
+    border-radius: 6px;
+    border: 1px solid #b0bec5;
+    background: #fff;
+    font-size: 1rem;
+    color: #1a237e;
+    outline: none;
+    transition: border 0.2s;
+}
+
+#language-select:focus {
+    border: 1.5px solid #3949ab;
+    background: #f0f4ff;
+}
+
+.visually-hidden {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+
+/* News Section Styles */
+
+.news-section {
+    padding: 40px;
+    max-width: 1200px;
+    margin: auto;
+    text-align: center;
+}
+
+.news-section h1 {
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    color: #0055a5;
+}
+
+.news-item {
+    display: inline-block;
+    width: 30%;
+    margin: 0 1.5%;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    padding: 20px;
+    vertical-align: top;
+    transition: transform 0.3s ease;
+}
+
+.news-item:hover {
+    transform: translateY(-5px);
+}
+
+.news-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+    margin-bottom: 15px;
+}
+
+.news-item h2 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.news-item p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #666;
+}
+
+
+
+
+
+
+/* Responsive Header Styles */
+@media screen and (max-width: 1024px) {
+    .header {
+        padding: 15px 10px;
+    }
+
+    .header__logo {
+        margin-bottom: 10px;
+    }
+
+    .header>div {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .header__nav {
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: auto;
+        padding-bottom: 5px;
+        margin-top: 10px;
+    }
+
+    .header__nav ul {
+        width: max-content;
+        padding-right: 20px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .header>div {
+        margin-bottom: 10px;
+    }
+
+    .language-menu {
+        margin-left: auto;
+    }
+
+    .header__nav {
+        padding-bottom: 8px;
+    }
+
+    .header__nav li a {
+        padding: 5px 8px;
+        font-size: 14px;
+    }
+}
+
+/* Add visual indicator for scrollable navigation */
+@media screen and (max-width: 1024px) {
+    .header__nav::after {
+        content: '';
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 100%;
+        width: 30px;
+        background: linear-gradient(to right, transparent, #003366);
+        pointer-events: none;
+        opacity: 0.8;
+    }
+}
+
+/* Fix for iOS momentum scrolling */
+.header__nav {
+    -webkit-overflow-scrolling: touch;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Body Styles */
+.body {
+    padding: 20px;
+}
+
+.body__content {
+    margin-bottom: 20px;
+}
+
+.bg-color {
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #e6f7ff;
+    text-align: center;
+}
+
+.box-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    background-color: #ffffff;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.box {
+    flex: 1 1 calc(30% - 20px);
+    max-width: 30%;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.box i {
+    font-size: 24px;
+    color: #007bff;
+    margin-bottom: 10px;
+}
+
+.box a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    display: block;
+    margin-top: 10px;
+}
+
+.box a:hover {
+    color: #007bff;
+}
+
+/* Content Text Styles */
+/* Add this to your styles.css file */
+
+/* Horizontal arrangement with red underline for .content__text items */
+
+/* Professional horizontal card arrangement for the "Coming to France for ..." section */
+.coming-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2rem auto;
+    max-width: 1000px;
+    width: 100%;
+}
+
+.coming-container h2 {
+    margin-bottom: 2rem;
+    color: #1a237e;
+    font-size: 1.6rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+.cards-row {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    justify-content: center;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.card, .content__text {
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 2px 12px rgba(44,83,100,0.08);
+    padding: 1.5rem 1.2rem;
+    min-width: 220px;
+    max-width: 260px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0;
+    transition: transform 0.18s, box-shadow 0.18s;
+}
+
+.card:hover, .content__text:hover {
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: 0 8px 24px rgba(44,83,100,0.12);
+}
+
+.card li, .content__text li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.card a, .content__text a {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    font-size: 1.08rem;
+    color: #1a237e;
+    text-decoration: none;
+    font-weight: 600;
+    padding-bottom: 0.3rem;
+    border-bottom: 2.5px solid #e53935;
+    width: 100%;
+    justify-content: center;
+    transition: color 0.2s, border-bottom 0.2s;
+}
+
+.card a i, .content__text a i {
+    color: #e53935;
+    font-size: 1.3rem;
+}
+
+.card a:hover, .content__text a:hover {
+    color: #3949ab;
+    border-bottom: 2.5px solid #3949ab;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+    .cards-row {
+        flex-direction: column;
+        gap: 1.2rem;
+        align-items: center;
+    }
+    .card, .content__text {
+        width: 90%;
+        max-width: 350px;
+    }
+}
+/* Application Section */
+.application {
+    background-color: #f9f9f9;
+    /* Light gray background */
+    border: 1px solid #ddd;
+    /* Subtle border */
+    border-radius: 10px;
+    /* Rounded corners */
+    padding: 30px;
+    /* Padding inside the section */
+    margin: 30px auto;
+    /* Space around the section */
+    max-width: 800px;
+    /* Limit the width */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow for depth */
+    text-align: center;
+    /* Center-align the content */
+    font-family: Arial, sans-serif;
+    /* Clean font */
+}
+
+/* Application Image */
+.application img.office {
+    max-width: 100%;
+    /* Make the image responsive */
+    height: auto;
+    margin-bottom: 20px;
+    /* Space below the image */
+    border-radius: 10px;
+    /* Rounded corners for the image */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow for the image */
+}
+
+/* Application Heading */
+.application h3.application_content {
+    font-size: 24px;
+    /* Larger font size for the heading */
+    color: #003366;
+    /* Dark blue color */
+    margin-bottom: 15px;
+    /* Space below the heading */
+    font-weight: bold;
+    /* Bold text for emphasis */
+    text-transform: uppercase;
+    /* Uppercase for a professional look */
+}
+
+/* Application Paragraph */
+.application p {
+    font-size: 16px;
+    /* Standard font size */
+    color: #555;
+    /* Gray text color for readability */
+    line-height: 1.8;
+    /* Improve readability with proper line spacing */
+    margin-bottom: 20px;
+    /* Space below the paragraph */
+    text-align: justify;
+    /* Justify text for a clean layout */
+}
+
+/* Application Button */
+.application button {
+    background-color: #007bff;
+    /* Blue background */
+    color: white;
+    /* White text */
+    border: none;
+    /* Remove border */
+    padding: 10px 20px;
+    /* Padding for the button */
+    border-radius: 5px;
+    /* Rounded corners */
+    font-size: 16px;
+    /* Font size for the button */
+    font-weight: bold;
+    /* Bold text for emphasis */
+    cursor: pointer;
+    /* Pointer cursor on hover */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    /* Smooth hover effect */
+}
+
+.application button:hover {
+    background-color: #0056b3;
+    /* Darker blue on hover */
+    transform: scale(1.05);
+    /* Slightly enlarge the button on hover */
+}
+
+
+
+
+
+
+
+
+
+
+/* News Section Styles */
+.News {
+    background-color: rgba(0, 51, 102, 0.8);
+    /* Semi-transparent dark blue background */
+    color: white;
+    /* White text color */
+    border-radius: 10px;
+    /* Rounded corners */
+    padding: 20px;
+    /* Padding for spacing */
+    margin: 20px auto;
+    /* Center the section horizontally */
+    max-width: 600px;
+    /* Limit the width */
+    text-align: center;
+    /* Center-align content */
+    position: relative;
+    /* Position relative for layering */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* Subtle shadow */
+    background-size: cover;
+    /* Ensure background covers the entire section */
+    background-position: center;
+    /* Center the background image */
+    background-image: url('./image/background-news.jpg');
+    /* Add a background image */
+}
+
+.News .content h2 {
+    font-size: 20px;
+    /* Slightly smaller font size for the heading */
+    margin-bottom: 10px;
+    /* Space below the heading */
+    font-weight: bold;
+    /* Bold text */
+}
+
+.News .content__text {
+    margin-top: 10px;
+    /* Space above the content */
+    font-size: 14px;
+    /* Smaller font size */
+    line-height: 1.5;
+    /* Improve readability */
+}
+
+.News .content__text img {
+    width: 80%;
+    /* Reduce image size */
+    max-width: 200px;
+    /* Limit the image width */
+    height: auto;
+    /* Maintain aspect ratio */
+    margin-bottom: 10px;
+    /* Space below the image */
+    border-radius: 8px;
+    /* Rounded corners for the image */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow for the image */
+}
+
+.News .content__text li {
+    list-style: none;
+    /* Remove bullet points */
+    margin: 10px 0;
+    /* Space around the list item */
+}
+
+.News .content__text a {
+    text-decoration: none;
+    /* Remove underline */
+    color: #ffcc00;
+    /* Yellow text color */
+    font-weight: bold;
+    /* Bold text */
+    transition: color 0.3s ease;
+    /* Smooth hover effect */
+}
+
+.News .content__text a:hover {
+    color: #ffffff;
+    /* White on hover */
+}
+
+.News .content__text p {
+    font-size: 12px;
+    /* Smaller font size for the paragraph */
+    margin-top: 10px;
+    /* Space above the paragraph */
+}
+
+
+
+
+
+* Information Section */ .info-section {
+    position: absolute;
+    /* Position it relative to the page */
+    top: 150px;
+    /* Adjust to align below the header */
+    left: 20px;
+    /* Position it on the left side */
+    width: 300px;
+    /* Set a fixed width */
+    background-color: #f9f9f9;
+    /* Light background color */
+    border: 1px solid #ddd;
+    /* Subtle border */
+    border-radius: 10px;
+    /* Rounded corners */
+    padding: 20px;
+    /* Padding inside the box */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow */
+    z-index: 1;
+    /* Ensure it appears above other elements */
+}
+
+.info-section h2 {
+    font-size: 18px;
+    /* Heading font size */
+    color: #003366;
+    /* Dark blue color */
+    margin-bottom: 10px;
+    /* Space below the heading */
+}
+
+.info-section p {
+    font-size: 14px;
+    /* Standard font size */
+    color: #555;
+    /* Gray text color */
+    line-height: 1.6;
+    /* Improve readability */
+    margin-bottom: 10px;
+    /* Space between paragraphs */
+}
+
+.info-section strong {
+    color: #007bff;
+    /* Highlighted blue text for emphasis */
+}
+
+/* Information Section */
+.info-section {
+    position: absolute;
+    /* Position it relative to the page */
+    top: 150px;
+    /* Adjust to align below the header */
+    left: 20px;
+    /* Position it on the left side */
+    width: 300px;
+    /* Set a fixed width */
+    background-color: #f9f9f9;
+    /* Light background color */
+    border: 1px solid #ddd;
+    /* Subtle border */
+    border-radius: 10px;
+    /* Rounded corners */
+    padding: 20px;
+    /* Padding inside the box */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow */
+    z-index: 1;
+    /* Ensure it appears above other elements */
+}
+
+.info-section h2 {
+    font-size: 18px;
+    /* Heading font size */
+    color: #003366;
+    /* Dark blue color */
+    margin-bottom: 10px;
+    /* Space below the heading */
+}
+
+.info-section p {
+    font-size: 14px;
+    /* Standard font size */
+    color: #555;
+    /* Gray text color */
+    line-height: 1.6;
+    /* Improve readability */
+    margin-bottom: 10px;
+    /* Space between paragraphs */
+}
+
+.info-section strong {
+    color: #007bff;
+    /* Highlighted blue text for emphasis */
+}
+
+
+
+
+
+
+/* Heading Style */
+.information-section h2 {
+    font-size: 24px;
+    /* Larger font size for the heading */
+    color: #003366;
+    /* Dark blue color for the heading */
+    margin-bottom: 20px;
+    /* Space below the heading */
+    text-align: center;
+    /* Center-align the heading */
+    font-weight: bold;
+    /* Bold text for emphasis */
+    text-transform: uppercase;
+    /* Uppercase for a professional look */
+}
+
+/* List Style */
+.information-section ul {
+    list-style-type: disc;
+    /* Use bullet points */
+    padding-left: 40px;
+    /* Indent the list */
+    margin-top: 15px;
+    /* Space above the list */
+}
+
+.information-section ul li {
+    font-size: 16px;
+    /* Standard font size */
+    color: #333;
+    /* Slightly darker gray for list items */
+    margin-bottom: 10px;
+    /* Space between list items */
+}
+
+/* Highlighted Text */
+.information-section strong {
+    color: #007bff;
+    /* Highlighted blue text for emphasis */
+    font-weight: bold;
+    /* Bold text for important notes */
+}
+
+
+
+
+
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    /* Light background color */
+    color: #333;
+    /* Default text color */
+    line-height: 1.6;
+}
+
+/* Header Section */
+.header {
+    background-color: #003366;
+    /* Dark blue background */
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header .logo {
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+}
+
+.header .navbar {
+    display: flex;
+    gap: 20px;
+}
+
+.header .navbar a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.header .navbar a:hover,
+.header .navbar a.active {
+    color: #ffcc00;
+    /* Highlight color */
+}
+
+/* Sticky Header */
+.header {
+    position: sticky;
+    /* Makes the header stick to the top */
+    top: 0;
+    /* Sticks the header to the top of the viewport */
+    z-index: 1000;
+    /* Ensures the header stays above other elements */
+    background-color: #003366;
+    /* Dark blue background */
+    color: white;
+    /* White text color */
+    padding: 15px 30px;
+    /* Padding for spacing */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow for depth */
+}
+
+.header__logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.header__logo-img {
+    width: 50px;
+    height: auto;
+}
+
+.header__nav ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.header__nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.header__nav ul li a:hover {
+    color: #ffcc00;
+    /* Highlight color on hover */
+}
+
+
+
+
+
+
+
+/* Centering the Image */
+img.passport {
+    display: block;
+    /* Makes the image a block-level element */
+    margin: 20px auto;
+    /* Centers the image horizontally and adds vertical spacing */
+    max-width: 100%;
+    /* Ensures the image is responsive */
+    height: auto;
+    /* Maintains the aspect ratio */
+    border-radius: 10px;
+    /* Adds rounded corners for a modern look */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Adds a subtle shadow for depth */
+}
+
+/* Centering the Passport Heading */
+h2 {
+    text-align: center;
+    /* Centers the text horizontally */
+    margin-top: 20px;
+    /* Adds space above the heading */
+    margin-bottom: 20px;
+    /* Adds space below the heading */
+    font-size: 24px;
+    /* Adjusts the font size for better visibility */
+    color: #003366;
+    /* Dark blue color for consistency */
+    font-weight: bold;
+    /* Makes the text bold */
+}
+
+
+
+
+
+
+#menu-btn {
+    display: none;
+    /* Hide menu button for desktop */
+}
+
+/* Heading Section */
+.heading {
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    padding: 60px 20px;
+    color: white;
+    font-size: 36px;
+    font-weight: bold;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Container Section */
+.container {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.container p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+/* Form Styles */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+form label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+form input,
+form select,
+form button {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+form input[type="file"] {
+    padding: 5px;
+}
+
+form button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    #menu-btn {
+        display: block;
+        font-size: 24px;
+        cursor: pointer;
+    }
+}
+
+
+
+/* Footer Styles */
+
+.footer {
+    background-color: #0055a5;
+    color: #ffffff;
+    padding: 40px 20px 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.footer__container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 40px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.footer__logo {
+    flex: 1 1 300px;
+}
+
+.footer__logo-img {
+    max-width: 120px;
+    margin-bottom: 15px;
+}
+
+.footer__description {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #e0e0e0;
+}
+
+.footer__links,
+.footer__contact {
+    flex: 1 1 200px;
+}
+
+.footer__links h3,
+.footer__contact h3 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    color: #ffffff;
+    border-bottom: 1px solid #ffffff30;
+    padding-bottom: 5px;
+}
+
+.footer__links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer__links ul li {
+    margin-bottom: 10px;
+}
+
+.footer__links ul li a {
+    color: #e0e0e0;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer__links ul li a:hover {
+    color: #ffcc00;
+}
+
+.footer__contact p {
+    margin: 8px 0;
+    font-size: 0.95rem;
+    color: #e0e0e0;
+}
+
+.footer__bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #ffffff30;
+    font-size: 0.85rem;
+    color: #cccccc;
+}
+
+/* === Responsive Styles === */
+
+/* Make images responsive */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Responsive containers */
+.container, .header, .main, .footer {
+    width: 100%;
+    padding: 0 15px;
+    box-sizing: border-box;
+}
+
+/* Flex adjustments */
+.header, .nav, .main-content, .footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Responsive text */
+h1, h2, h3, p {
+    word-wrap: break-word;
+}
+
+/* Media Queries */
+@media (max-width: 1024px) {
+    .header, .nav, .main-content, .footer {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav a {
+        margin: 10px 0;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        font-size: 16px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    .header__logo-text {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 14px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    .header__logo, .footer {
+        text-align: center;
+    }
+}

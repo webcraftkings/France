@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Visa Submission Locations</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fff;
+    }
+
+    header {
+      padding: 20px;
+      background-color: #f4f4f4;
+      border-bottom: 1px solid #ddd;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 24px;
+    }
+
+    nav {
+      display: flex;
+      gap: 15px;
+      padding: 10px 20px;
+      background-color: #eaeaea;
+      overflow-x: auto;
+    }
+
+    nav button {
+      padding: 8px 15px;
+      background-color: #d6d6f7;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    nav button.active {
+      background-color: #6a74e2;
+      color: #fff;
+    }
+
+    .search-bar {
+      padding: 10px 20px;
+    }
+
+    .search-bar input {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .container {
+      padding: 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 20px;
+    }
+
+    .country {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .country img {
+      width: 30px;
+      height: 20px;
+      object-fit: cover;
+    }
+
+    .pagination {
+      display: flex;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .pagination button {
+      margin: 0 5px;
+      padding: 8px 12px;
+      border: 1px solid #ccc;
+      background-color: #fff;
+      cursor: pointer;
+    }
+
+    .pagination button.active {
+      background-color: #6a74e2;
+      color: #fff;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Place of Submission</h1>
+  </header>
+
+  <nav id="region-nav"></nav>
+
+  <div class="search-bar">
+    <input type="text" id="search-input" placeholder="Search for a country..." oninput="filterCountries()">
+  </div>
+
+  <div class="container" id="countries-container"></div>
+  <div class="pagination" id="pagination"></div>
+
+  <script>
+    const countries = {
+      'Africa': [
+        { name: 'Nigeria', flag: 'https://flagcdn.com/w40/ng.png' },
+        { name: 'Ghana', flag: 'https://flagcdn.com/w40/gh.png' },
+        { name: 'South Africa', flag: 'https://flagcdn.com/w40/za.png' },
+        { name: 'Kenya', flag: 'https://flagcdn.com/w40/ke.png' }
+        // ... You can continue adding all African countries here
+      ],
+      'America': [
+        { name: 'United States', flag: 'https://flagcdn.com/w40/us.png' },
+        { name: 'Canada', flag: 'https://flagcdn.com/w40/ca.png' },
+        { name: 'Brazil', flag: 'https://flagcdn.com/w40/br.png' },
+        { name: 'Mexico', flag: 'https://flagcdn.com/w40/mx.png' }
+      ],
+      'Asia': [
+        { name: 'China', flag: 'https://flagcdn.com/w40/cn.png' },
+        { name: 'India', flag: 'https://flagcdn.com/w40/in.png' },
+        { name: 'Japan', flag: 'https://flagcdn.com/w40/jp.png' },
+        { name: 'South Korea', flag: 'https://flagcdn.com/w40/kr.png' }
+      ],
+      'Europe': [
+        { name: 'France', flag: 'https://flagcdn.com/w40/fr.png' },
+        { name: 'Germany', flag: 'https://flagcdn.com/w40/de.png' },
+        { name: 'United Kingdom', flag: 'https://flagcdn.com/w40/gb.png' },
+        { name: 'Italy', flag: 'https://flagcdn.com/w40/it.png' }
+      ],
+      'Oceania': [
+        { name: 'Australia', flag: 'https://flagcdn.com/w40/au.png' },
+        { name: 'New Zealand', flag: 'https://flagcdn.com/w40/nz.png' },
+        { name: 'Fiji', flag: 'https://flagcdn.com/w40/fj.png' }
+      ],
+      'North Africa / Middle East': [
+        { name: 'Egypt', flag: 'https://flagcdn.com/w40/eg.png' },
+        { name: 'Morocco', flag: 'https://flagcdn.com/w40/ma.png' },
+        { name: 'Saudi Arabia', flag: 'https://flagcdn.com/w40/sa.png' },
+        { name: 'United Arab Emirates', flag: 'https://flagcdn.com/w40/ae.png' }
+      ]
+    };
+
+    const regionNav = document.getElementById('region-nav');
+    for (const region in countries) {
+      const btn = document.createElement('button');
+      btn.textContent = region;
+      btn.onclick = () => showCountries(region);
+      regionNav.appendChild(btn);
+    }
+    regionNav.firstChild.classList.add('active');
+
+    let currentRegion = Object.keys(countries)[0];
+    let currentPage = 1;
+    const itemsPerPage = 20;
+    let filteredCountries = countries[currentRegion];
+
+    function showCountries(region) {
+      currentRegion = region;
+      currentPage = 1;
+      document.querySelectorAll('nav button').forEach(btn => btn.classList.remove('active'));
+      [...document.querySelectorAll('nav button')].find(btn => btn.textContent === region).classList.add('active');
+      filteredCountries = countries[region];
+      document.getElementById('search-input').value = '';
+      renderCountries();
+    }
+
+    function renderCountries() {
+      const container = document.getElementById('countries-container');
+      const pagination = document.getElementById('pagination');
+      container.innerHTML = '';
+
+      const start = (currentPage - 1) * itemsPerPage;
+      const end = start + itemsPerPage;
+      const paginated = filteredCountries.slice(start, end);
+
+      paginated.forEach(country => {
+        const div = document.createElement('div');
+        div.className = 'country';
+        div.innerHTML = `<img src="${country.flag}" alt="${country.name}" /><span>${country.name}</span>`;
+        container.appendChild(div);
+      });
+
+      const totalPages = Math.ceil(filteredCountries.length / itemsPerPage);
+      pagination.innerHTML = '';
+      for (let i = 1; i <= totalPages; i++) {
+        const btn = document.createElement('button');
+        btn.textContent = i;
+        btn.className = i === currentPage ? 'active' : '';
+        btn.onclick = () => {
+          currentPage = i;
+          renderCountries();
+        };
+        pagination.appendChild(btn);
+      }
+    }
+
+    function filterCountries() {
+      const query = document.getElementById('search-input').value.toLowerCase();
+      filteredCountries = countries[currentRegion].filter(c => c.name.toLowerCase().includes(query));
+      currentPage = 1;
+      renderCountries();
+    }
+
+    renderCountries();
+  </script>
+</body>
+
+</html>

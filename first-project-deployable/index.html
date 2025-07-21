@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Immigration Service</title>
+    <!-- <link rel="icon" href="./image/favicon.icon" type="image/x-icon"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="main.css">
+    <!-- Font Awesome CDN for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+
+<!-- header session begins -->
+<header class="header">
+    <div class="header">
+        <div class="header__logo">
+            <img src="./image/imilogo.jpg.png" alt="Logo" class="header__logo-img">
+            <h1 class="header__logo-text">Immigration Service</h1>
+            <h3 class="header__logo-text">france-visas.gov</h3>
+        </div>
+
+        <!-- header session ends -->
+
+
+
+        <!-- Language Menu -->
+
+        <div class="language-menu">
+            <img src="./image/flag.jpg" class="flag-icon" alt="Language Flag" id="flag-icon">
+            <label for="language-select" class="visually-hidden">Select Language</label>
+            <select id="language-select" onchange="changeLanguage()">
+                <option value="fr">Français</option>
+                <option value="en">English</option>
+            </select>
+        </div>
+
+        <!-- <button id="menu-btn" class="fas fa-bars" aria-label="Toggle Menu"></button> -->
+
+        <!-- <div class="header__search">
+                <input type="text" class="header__search-input" placeholder="Search...">
+                <button class="header__search-button"><i class="fas fa-search"></i></button
+            </div> -->
+
+        <nav class="header__nav">
+            <ul class="header__nav">
+                <li><a href="gen-info.html">General Information</a></li>
+                <li><a href="tour.html">Tourism / Private Stay</a></li>
+                <li><a href="professional.html">Professional Purpose</a></li>
+                <li><a href="studies.html">Studies / Training</a></li>
+                <li><a href="family.html">Family Purpose</a></li>
+                <li><a href="your-arrival.html">Your Arrival In France</a></li>
+                <!-- <li><a href="#about">Frequently Asked Question</a></li> -->
+            </ul>
+        </nav>
+
+    </div>
+</header>
+<!-- Language Menu  ends -->
+
+<body>
+
+
+    <!-- body session begins -->
+    <div class="body">
+        <div class="body__content">
+            <div class="bg-color" style="background:url(./image/first-bg-color.png) no-repeat;">
+                <div class="content">
+                    <h3>Welcome to France Visas Service</h3>
+                    <p>Find the right visa for your trip to France</p>
+                </div>
+                <div class="box-container">
+                    <div class="box">
+                        <li>
+                            <a href="Need-visa.html">
+                                <i class="fas fa-passport"></i>
+                                Do you need a visa?
+                            </a>
+                        </li>
+                    </div>
+
+                    <div class="box">
+                        <li>
+                            <a href="visa-application.html">
+                                <i class="fas fa-sticky-note"></i>
+                                Start your visa Application
+                            </a>
+                        </li>
+                    </div>
+
+                    <div class="box">
+                        <li>
+                            <a href="track.html">
+                                <i class="fas fa-map-marker-alt"></i>
+                                Track your application
+                            </a>
+                        </li>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="body__content">
+            <div class="coming-container">
+                <h2>Coming to France for …</h2>
+                <div class="cards-row">
+                    <div class="card">
+                        <li>
+                            <a href="">
+                                <i class="fas fa-route"></i> Tourism or Private visit
+                            </a>
+                        </li>
+                    </div>
+                    <div class="card">
+                        <li>
+                            <a href="">
+                                <i class="fas fa-briefcase"></i> Business travel
+                            </a>
+                        </li>
+                    </div>
+                    <div class="card">
+                        <li>
+                            <a href="">
+                                <i class="fas fa-graduation-cap"></i> Studies or Training
+                            </a>
+                        </li>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <section class="news-section">
+            <h1>News</h1>
+
+            <div class="news-item">
+                <img src="image/digitalization.png" alt="Digitization">
+                <h2>Digitization</h2>
+                <p>The France-Visas application offers students the possibility to send digital copies of their
+                    documents for easier processing.</p>
+            </div>
+
+            <div class="news-item">
+                <img src="image/appointment.png" alt="Appointment">
+                <h2>Appointment</h2>
+                <p>On the day of your appointment, you must print and bring your receipt and required documentation.</p>
+            </div>
+
+            <div class="news-item">
+                <img src="image/fraudulent.png" alt="Fraudulent Sites">
+                <h2>Fraudulent Sites</h2>
+                <p>Visa applicants should be cautious of websites falsely claiming to offer visa support services.</p>
+            </div>
+        </section>
+
+
+        <div class="application">
+            <img src="./image/office visas.png" class="office">
+            <h3 class="application_content">Where to submit your Application ?</h3>
+            <p>You will find all the information you need to submit your visa application, such as access to appointment
+                booking,
+                <br>information on certain special cases, fees and accepted means of payment, as well as all the contact
+                information in case
+                <br>of questions about your situation. You will need to select the country in which you reside and
+                submit your visa
+                <br>application.
+            </p>
+            <button onclick="location.href='appointment.html'">Make an appointment</button>
+        </div>
+
+    </div>
+
+    <!-- body session ends -->
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__logo">
+                <img src="./image/imilogo.jpg.png" alt="Logo" class="footer__logo-img">
+                <p class="footer__description">
+                    France Immigration Service - The official website for visas for France. Helping you with all your
+                    visa needs.
+                </p>
+            </div>
+
+            <!-- Footer Links -->
+            <div class="footer__links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#home">General Information</a></li>
+                    <li><a href="#services">Tourism / Private Stay</a></li>
+                    <li><a href="#about">Professional Purpose</a></li>
+                    <li><a href="#faq">Frequently Asked Questions</a></li>
+                </ul>
+            </div>
+
+            <!-- Footer Contact -->
+            <div class="footer__contact">
+                <h3>Contact Us</h3>
+                <p>Email: support@france-visas.gov</p>
+                <p>Phone: +33 1 23 45 67 89</p>
+                <p>Address: 10 Rue de France, Paris, France</p>
+            </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer__bottom">
+            <p>&copy; 2025 France Immigration Service. All rights reserved.</p>
+        </div>
+    </footer>
+
+
+    <script src="./script.js"></script>
+</body>
+
+</html>
